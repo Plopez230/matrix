@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:23:11 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 00:29:49 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 00:42:29 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void test_constructor()
 {
     int elements[] = {1, 2, 3, 4};
     Matrix<int> m(elements, 2, 2);
+    
     assert(m.get_element(0, 0) == 1);
     assert(m.get_element(0, 1) == 2);
     assert(m.get_element(1, 0) == 3);
@@ -140,17 +141,23 @@ void test_exceptions()
     int elements[] = {1, 2, 3, 4};
     Matrix<int> m(elements, 2, 2);
 
-    try {
+    try
+    {
         m.get_element(3, 3);
         assert(false);
-    } catch (const std::out_of_range& e) {
+    }
+    catch (const std::out_of_range& e)
+    {
         assert(true);
     }
 
-    try {
+    try
+    {
         m.reshape(1, 3);
         assert(false);
-    } catch (const std::invalid_argument& e) {
+    }
+    catch (const std::invalid_argument& e)
+    {
         assert(true);
     }
     std::cout << "Test exceptions passed." << std::endl;
