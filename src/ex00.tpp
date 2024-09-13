@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 00:07:37 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 00:37:57 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 01:17:25 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,73 +17,55 @@
 # include <cstring>
 
 template <typename K>
-Matrix<K> add(Matrix<K> a, Matrix<K> b)
+void Matrix<K>::add(Matrix<K> m)
 {
-    const int *a_shape = a.get_shape();
-    const int *b_shape = b.get_shape();
-    int rows = a_shape[0];
-    int cols = a_shape[1];
-    K result_elements[rows * cols];
+    const int *m_shape = m.get_shape();
+    const int *this_shape = this->get_shape();
 
-    if (a_shape[0] != b_shape[0] || a_shape[1] != b_shape[1])
+    if (this_shape[0] != m_shape[0] || this_shape[1] != m_shape[1])
     {
         throw std::invalid_argument(
             "Matrix dimensions must match for addition.");
     }
-    
-    for (int i = 0; i < rows; ++i)
+
+    for (int i = 0; i < shape[0]; ++i)
     {
-        for (int j = 0; j < cols; ++j)
+        for (int j = 0; j < shape[1]; ++j)
         {
-            result_elements[i * cols + j] = a.get_element(i, j)
-                + b.get_element(i, j);
+            this->elements[i * shape[1] + j] += m.get_element(i, j);
         }
     }
-
-    return Matrix<K>(result_elements, rows, cols);
 }
 
 template <typename K>
-Matrix<K> subtract(Matrix<K> a, Matrix<K> b)
-{
-    const int *a_shape = a.get_shape();
-    const int *b_shape = b.get_shape();
-    int rows = a_shape[0];
-    int cols = a_shape[1];
-    K result_elements[rows * cols];
-    
-    if (a_shape[0] != b_shape[0] || a_shape[1] != b_shape[1])
+void Matrix<K>::subtract(Matrix<K> m) {
+    const int *m_shape = m.get_shape();
+    const int *this_shape = this->get_shape();
+
+    if (this_shape[0] != m_shape[0] || this_shape[1] != m_shape[1])
     {
         throw std::invalid_argument(
-            "Matrix dimensions must match for subtraction.");
-    }
-    
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j)
-        {
-            result_elements[i * cols + j] = a.get_element(i, j)
-                - b.get_element(i, j);
-        }
+            "Matrix dimensions must match for addition.");
     }
 
-    return Matrix<K>(result_elements, rows, cols);
+    for (int i = 0; i < shape[0]; ++i)
+    {
+        for (int j = 0; j < shape[1]; ++j)
+        {
+            this->elements[i * shape[1] + j] -= m.get_element(i, j);
+        }
+    }
 }
 
 template <typename K>
-Matrix<K> scale(Matrix<K> a, K scalar) {
-    int rows = a.get_shape()[0];
-    int cols = a.get_shape()[1];
-    K result_elements[rows * cols];
-    
-    for (int i = 0; i < rows; ++i) {
-        for (int j = 0; j < cols; ++j)
+void Matrix<K>::scale(K scalar) {
+    for (int i = 0; i < shape[0]; ++i)
+    {
+        for (int j = 0; j < shape[1]; ++j)
         {
-            result_elements[i * cols + j] = a.get_element(i, j)
-                * scalar;
+            this->elements[i * shape[1] + j] *= scalar;
         }
     }
-
-    return Matrix<K>(result_elements, rows, cols);
 }
 
 #endif

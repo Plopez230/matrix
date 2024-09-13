@@ -6,11 +6,11 @@
 #    By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 23:25:54 by plopez-b          #+#    #+#              #
-#    Updated: 2024/09/14 00:36:23 by plopez-b         ###   ########.fr        #
+#    Updated: 2024/09/14 01:09:17 by plopez-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS			=	-Wall -Werror -Wextra -std=c++98 -I./src/include
+FLAGS			=	-Wall -Werror -Wextra -std=c++98 -I./src
 
 TESTS			=	src/tests/matrix.cpp \
 					src/tests/ex00.cpp

@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 00:17:59 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 00:31:20 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 01:13:53 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "matrix.hpp"
 
 template <typename K>
-bool matrices_are_equal(const Matrix<K>& a, const Matrix<K>& b);
+bool matrix_equality(const Matrix<K>& a, const Matrix<K>& b);
 void test_add();
 void test_subtract();
 void test_scale();
@@ -28,7 +28,7 @@ int main() {
 }
 
 template <typename K>
-bool matrices_are_equal(const Matrix<K>& a, const Matrix<K>& b) {
+bool matrix_equality(const Matrix<K>& a, const Matrix<K>& b) {
     const int *a_shape = a.get_shape();
     const int *b_shape = b.get_shape();
 
@@ -51,44 +51,44 @@ bool matrices_are_equal(const Matrix<K>& a, const Matrix<K>& b) {
 }
 
 void test_add() {
-    int elements_a[] = {1, 2, 3, 4};
-    int elements_b[] = {4, 3, 2, 4};
-    int expected_elements[] = {5, 5, 5, 8};
+    int values_a[] = {1, 2, 3, 4};
+    int values_b[] = {4, 3, 2, 1};
+    int expected_values[] = {5, 5, 5, 5};
 
-    Matrix<int> A(elements_a, 2, 2);
-    Matrix<int> B(elements_b, 2, 2);
-    Matrix<int> expected(expected_elements, 2, 2);
+    Matrix<int> A(values_a, 2, 2);
+    Matrix<int> B(values_b, 2, 2);
+    Matrix<int> expected(expected_values, 2, 2);
 
-    Matrix<int> result = add(A, B);
+    A.add(B);
 
-    assert(matrices_are_equal(result, expected));
+    assert(matrix_equality(A, expected));
     std::cout << "Test add passed." << std::endl;
 }
 
 void test_subtract() {
-    int elements_a[] = {1, 2, 3, 4};
-    int elements_b[] = {4, 3, 2, 1};
-    int expected_elements[] = {-3, -1, 1, 3};
+    int values_a[] = {1, 2, 3, 4};
+    int values_b[] = {4, 3, 2, 1};
+    int expected_values[] = {-3, -1, 1, 3};
 
-    Matrix<int> A(elements_a, 2, 2);
-    Matrix<int> B(elements_b, 2, 2);
-    Matrix<int> expected(expected_elements, 2, 2);
+    Matrix<int> A(values_a, 2, 2);
+    Matrix<int> B(values_b, 2, 2);
+    Matrix<int> expected(expected_values, 2, 2);
 
-    Matrix<int> result = subtract(A, B);
+    A.subtract(B);
 
-    assert(matrices_are_equal(result, expected));
+    assert(matrix_equality(A, expected));
     std::cout << "Test subtract passed." << std::endl;
 }
 
 void test_scale() {
-    int elements_a[] = {1, 2, 3, 4};
-    int expected_elements[] = {2, 4, 6, 8};
+    int values_a[] = {1, 2, 3, 4};
+    int expected_values[] = {2, 4, 6, 8};
 
-    Matrix<int> A(elements_a, 2, 2);
-    Matrix<int> expected(expected_elements, 2, 2);
+    Matrix<int> A(values_a, 2, 2);
+    Matrix<int> expected(expected_values, 2, 2);
 
-    Matrix<int> result = scale(A, 2);
+    A.scale(2);
 
-    assert(matrices_are_equal(result, expected));
+    assert(matrix_equality(A, expected));
     std::cout << "Test scale passed." << std::endl;
 }
