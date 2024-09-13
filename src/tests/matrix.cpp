@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:23:11 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 00:05:18 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 00:29:49 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void test_set_element();
 void test_get_shape();
 void test_is_square();
 void test_print();
-void test_reget_shape();
+void test_reshape();
 void test_exceptions();
 
 int main()
@@ -33,7 +33,7 @@ int main()
     test_get_shape();
     test_is_square();
     test_print();
-    test_reget_shape();
+    test_reshape();
     test_exceptions();
 
     std::cout << "All tests passed successfully!" << std::endl;
@@ -48,6 +48,7 @@ void test_constructor()
     assert(m.get_element(0, 1) == 2);
     assert(m.get_element(1, 0) == 3);
     assert(m.get_element(1, 1) == 4);
+    std::cout << "Test constructor passed." << std::endl;
 }
 
 void test_constructor_copy()
@@ -60,6 +61,7 @@ void test_constructor_copy()
     assert(m2.get_element(0, 1) == 2);
     assert(m2.get_element(1, 0) == 3);
     assert(m2.get_element(1, 1) == 4);
+    std::cout << "Test constructor copy passed." << std::endl;
 }
 
 void test_get_element()
@@ -69,6 +71,7 @@ void test_get_element()
 
     assert(m.get_element(0, 0) == 1);
     assert(m.get_element(1, 2) == 6);
+    std::cout << "Test get element passed." << std::endl;
 }
 
 void test_set_element()
@@ -76,11 +79,12 @@ void test_set_element()
     int elements[] = {1, 2, 3, 4, 5, 6};
     Matrix<int> m(elements, 2, 3);
 
-    m.set_element(10, 0, 1); // Changing element at (0, 1) from 2 to 10
+    m.set_element(10, 0, 1);
     assert(m.get_element(0, 1) == 10);
 
-    m.set_element(20, 1, 2); // Changing element at (1, 2) from 6 to 20
+    m.set_element(20, 1, 2);
     assert(m.get_element(1, 2) == 20);
+    std::cout << "Test set element passed." << std::endl;
 }
 
 void test_get_shape()
@@ -89,19 +93,21 @@ void test_get_shape()
     Matrix<int> m(elements, 2, 2);
 
     const int* shape = m.get_shape();
-    assert(shape[0] == 2); // Rows
-    assert(shape[1] == 2); // Columns
+    assert(shape[0] == 2);
+    assert(shape[1] == 2);
+    std::cout << "Test get shape passed." << std::endl;
 }
 
 void test_is_square()
 {
     int elements1[] = {1, 2, 3, 4};
-    Matrix<int> m1(elements1, 2, 2); // Square matrix
+    Matrix<int> m1(elements1, 2, 2);
     assert(m1.is_square() == 1);
 
     int elements2[] = {1, 2, 3, 4, 5, 6};
-    Matrix<int> m2(elements2, 2, 3); // Non-square matrix
+    Matrix<int> m2(elements2, 2, 3);
     assert(m2.is_square() == 0);
+    std::cout << "Test is square passed." << std::endl;
 }
 
 void test_print()
@@ -110,21 +116,23 @@ void test_print()
     Matrix<int> m(elements, 2, 2);
 
     std::cout << "Expected output:\n1 2\n3 4\nActual output:\n";
-    m.print(); // Should print the matrix in a readable format
+    m.print();
+    std::cout << "Test print passed." << std::endl;
 }
 
-void test_reget_shape()
+void test_reshape()
 {
     int elements[] = {1, 2, 3, 4};
     Matrix<int> m(elements, 2, 2);
 
-    m.reshape(1, 4); // Reshaping from 2x2 to 1x4
+    m.reshape(1, 4);
     assert(m.get_element(0, 0) == 1);
     assert(m.get_element(0, 3) == 4);
 
     const int* shape = m.get_shape();
-    assert(shape[0] == 1); // Rows
-    assert(shape[1] == 4); // Columns
+    assert(shape[0] == 1);
+    assert(shape[1] == 4);
+    std::cout << "Test reshape passed." << std::endl;
 }
 
 void test_exceptions()
@@ -132,19 +140,18 @@ void test_exceptions()
     int elements[] = {1, 2, 3, 4};
     Matrix<int> m(elements, 2, 2);
 
-    // Testing out-of-range access
     try {
-        m.get_element(3, 3); // Should throw an exception
-        assert(false); // Should not reach this line
+        m.get_element(3, 3);
+        assert(false);
     } catch (const std::out_of_range& e) {
-        assert(true); // Exception was correctly thrown
+        assert(true);
     }
 
-    // Testing invalid reshape
     try {
-        m.reshape(1, 3); // Invalid reshape, should throw an exception
-        assert(false); // Should not reach this line
+        m.reshape(1, 3);
+        assert(false);
     } catch (const std::invalid_argument& e) {
-        assert(true); // Exception was correctly thrown
+        assert(true);
     }
+    std::cout << "Test exceptions passed." << std::endl;
 }

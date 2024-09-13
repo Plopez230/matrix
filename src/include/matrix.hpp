@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 00:05:19 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 00:11:58 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,5 +34,19 @@ public:
 };
 
 # include "matrix.tpp"
+
+// ex00.tpp
+
+template <typename K>
+Matrix<K> add(Matrix<K> a, Matrix<K> b);
+
+template <typename K>
+Matrix<K> subtract(Matrix<K> a, Matrix<K> b);
+
+template <typename K>
+Matrix<K> scale(Matrix<K> a, K scalar);
+
+# include "../ex00.tpp"
+
 
 #endif

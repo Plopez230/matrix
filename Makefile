@@ -6,13 +6,14 @@
 #    By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 23:25:54 by plopez-b          #+#    #+#              #
-#    Updated: 2024/09/13 23:57:51 by plopez-b         ###   ########.fr        #
+#    Updated: 2024/09/14 00:36:23 by plopez-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 FLAGS			=	-Wall -Werror -Wextra -std=c++98 -I./src/include
 
-TESTS			=	src/tests/matrix.cpp
+TESTS			=	src/tests/matrix.cpp \
+					src/tests/ex00.cpp
 
 OBJ_TESTS		=	$(addprefix obj/, $(TESTS:.cpp=.o))
 
@@ -29,7 +30,7 @@ obj/%.o: %.cpp
 bin/%: obj/%.o
 	@mkdir -p $(dir $@)
 	@${COMPILER} ${FLAGS} $< -o $@
-	$@
+	valgrind --leak-check=full --track-origins=yes --error-exitcode=1 $@;
 	
 clean:
 	@rm -rf ${OBJ_TESTS} ${BIN_TESTS} obj/ bin/
