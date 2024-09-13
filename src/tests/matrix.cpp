@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:23:11 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 00:42:29 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 01:22:00 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int main()
     test_reshape();
     test_exceptions();
 
-    std::cout << "All tests passed successfully!" << std::endl;
     return 0;
 }
 
