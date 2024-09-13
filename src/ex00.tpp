@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 00:07:37 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 01:17:25 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 01:33:11 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <cstring>
 
 template <typename K>
-void Matrix<K>::add(Matrix<K> m)
+void Matrix<K>::add(const Matrix<K> &m)
 {
     const int *m_shape = m.get_shape();
     const int *this_shape = this->get_shape();
@@ -38,7 +38,7 @@ void Matrix<K>::add(Matrix<K> m)
 }
 
 template <typename K>
-void Matrix<K>::subtract(Matrix<K> m) {
+void Matrix<K>::subtract(const Matrix<K> &m) {
     const int *m_shape = m.get_shape();
     const int *this_shape = this->get_shape();
 

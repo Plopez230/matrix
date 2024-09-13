@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:02:50 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 00:05:16 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 01:33:54 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ const K Matrix<K>::get_element(int row, int column) const
 }
 
 template <typename K>
-void Matrix<K>::set_element(K element, int row, int column)
+void Matrix<K>::set_element(const K &element, int row, int column)
 {
     if (row >= 0 && row < shape[0] && column >= 0 && column < shape[1])
         elements[row * shape[1] + column] = element;
@@ -91,6 +91,30 @@ void Matrix<K>::reshape(int rows, int columns)
             "The new shape does not have the same number of elements.");
     shape[0] = rows;
     shape[1] = columns;
+}
+
+template <typename K>
+bool Matrix<K>::operator==(const Matrix<K>& m) const
+{
+    const int *m_shape = m.get_shape();
+    const int *this_shape = this->get_shape();
+
+    if (m_shape[0] != this_shape[0] || m_shape[1] != this_shape[1])
+    {
+        return false;
+    }
+
+    for (int i = 0; i < m_shape[0]; ++i)
+    {
+        for (int j = 0; j < m_shape[1]; ++j)
+        {
+            if (m.get_element(i, j) != this->get_element(i, j))
+            {
+                return false;
+            }
+        }
+    }
+    return true;
 }
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:23:11 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 01:22:00 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 01:35:50 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void test_get_shape();
 void test_is_square();
 void test_print();
 void test_reshape();
+void test_equality_operator();
 void test_exceptions();
 
 int main()
@@ -34,6 +35,7 @@ int main()
     test_is_square();
     test_print();
     test_reshape();
+    test_equality_operator();
     test_exceptions();
 
     return 0;
@@ -133,6 +135,22 @@ void test_reshape()
     assert(shape[0] == 1);
     assert(shape[1] == 4);
     std::cout << "Test reshape passed." << std::endl;
+}
+
+void test_equality_operator() {
+    int values_a[] = {1, 2, 3, 4};
+    int values_b[] = {1, 2, 3, 4};
+    int values_c[] = {4, 3, 2, 1};
+    
+    Matrix<int> A(values_a, 2, 2);
+    Matrix<int> B(values_b, 2, 2);
+    Matrix<int> C(values_c, 2, 2);
+    Matrix<int> D(values_b, 1, 4);
+
+    assert(A == B);
+    assert(!(A == C));
+    assert(!(A == D));
+    std::cout << "Test equality operator passed." << std::endl;
 }
 
 void test_exceptions()
