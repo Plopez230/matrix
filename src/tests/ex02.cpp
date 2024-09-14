@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 02:57:34 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 03:20:47 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 16:44:53 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,12 @@
 #include "matrix.hpp"
 
 void test_lerp();
+void test_lerp_invalid_size();
 
 int main()
 {
     test_lerp();
+    test_lerp_invalid_size();
 
     return 0;
 }
@@ -55,4 +57,26 @@ void test_lerp() {
     result = lerp(U, V, 2.0);
     assert(result == expected2);
     std::cout << "Test lerp t=2 passed." << std::endl;
+}
+
+void test_lerp_invalid_size() {
+    double values_u[] = {1, 2, 3, 4};
+    double values_v[] = {5, 6, 7};
+
+    Vector<double> U(values_u, 4);
+    Vector<double> V(values_v, 3);
+
+    try
+    {
+        lerp(U, V, 0.5);
+        std::cerr <<
+            "Test lerp invalid size failed: No exception thrown."
+            << std::endl;
+    }
+    catch (const std::invalid_argument& e)
+    {
+        std::cout <<
+            "Test lerp invalid size passed: "
+            << e.what() << std::endl;
+    }
 }

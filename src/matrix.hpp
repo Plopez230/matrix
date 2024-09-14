@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 16:09:07 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 16:37:31 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ public:
     void        set_element(const K &element, int row);
 
     // ex03.tpp
-    void        dot(const Matrix<K> &m);
+    K           dot(const Vector<K> &v);
 };
 
 // ex01.tpp
@@ -82,5 +82,6 @@ Matrix<K> lerp(const Matrix<K> &u, const Matrix<K> &v, K t);
 # include "ex00.tpp"
 # include "ex01.tpp"
 # include "ex02.tpp"
+# include "ex03.tpp"
 
 #endif
