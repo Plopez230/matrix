@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 03:11:58 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 03:41:50 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ public:
     void        set_element(const K &element, int row, int column);
     const int   *get_shape() const;
     int         is_square() const;
+    int         is_vector() const;
     void        print() const;
     void        reshape(int rows, int columns);
     bool        operator==(const Matrix &m) const;

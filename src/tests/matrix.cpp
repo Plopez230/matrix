@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:23:11 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 01:35:50 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 03:44:04 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void test_get_element();
 void test_set_element();
 void test_get_shape();
 void test_is_square();
+void test_is_vector();
 void test_print();
 void test_reshape();
 void test_equality_operator();
@@ -33,6 +34,7 @@ int main()
     test_set_element();
     test_get_shape();
     test_is_square();
+    test_is_vector();
     test_print();
     test_reshape();
     test_equality_operator();
@@ -110,6 +112,18 @@ void test_is_square()
     Matrix<int> m2(elements2, 2, 3);
     assert(m2.is_square() == 0);
     std::cout << "Test is square passed." << std::endl;
+}
+
+void test_is_vector()
+{
+    int elements1[] = {1, 2, 3, 4};
+    Matrix<int> m1(elements1, 4, 0);
+    assert(m1.is_vector() == 1);
+
+    int elements2[] = {1, 2, 3, 4, 5, 6};
+    Matrix<int> m2(elements2, 2, 3);
+    assert(m2.is_vector() == 0);
+    std::cout << "Test is vector passed." << std::endl;
 }
 
 void test_print()

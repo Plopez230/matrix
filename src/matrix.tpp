@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:02:50 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 03:13:29 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 03:42:38 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,6 +88,12 @@ template <typename K>
 int Matrix<K>::is_square() const
 {
     return shape[0] == shape[1];
+}
+
+template <typename K>
+int Matrix<K>::is_vector() const
+{
+    return shape[0] > 0 && shape[1] == 0;
 }
 
 template <typename K>
