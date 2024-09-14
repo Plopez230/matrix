@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:23:11 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 16:05:07 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 16:22:13 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void test_is_vector();
 void test_print();
 void test_reshape_matrix_matrix();
 void test_reshape_matrix_vector();
+void test_reshape_vector_matrix();
+void test_reshape_vector_vector();
 void test_equality_operator();
 void test_exceptions();
 
@@ -39,6 +41,8 @@ int main()
     test_print();
     test_reshape_matrix_matrix();
     test_reshape_matrix_vector();
+    test_reshape_vector_matrix();
+    test_reshape_vector_vector();
     test_equality_operator();
     test_exceptions();
 
@@ -168,6 +172,38 @@ void test_reshape_matrix_vector()
     assert(shape[0] == 4);
     assert(shape[1] == 1);
     std::cout << "Test reshape matrix to vector passed." << std::endl;
+}
+
+void test_reshape_vector_matrix()
+{
+    int elements[] = {1, 2, 3, 4};
+    Vector<int> m(elements, 4);
+    Matrix<int> reshaped;
+
+    reshaped = m.reshape(1, 4);
+    assert(reshaped.get_element(0, 0) == 1);
+    assert(reshaped.get_element(0, 3) == 4);
+
+    const int* shape = reshaped.get_shape();
+    assert(shape[0] == 1);
+    assert(shape[1] == 4);
+    std::cout << "Test reshape vector to matrix passed." << std::endl;
+}
+
+void test_reshape_vector_vector()
+{
+    int elements[] = {1, 2, 3, 4};
+    Vector<int> m(elements, 4);
+    Vector<int> reshaped;
+
+    reshaped = m.reshape(4);
+    assert(reshaped.get_element(0) == 1);
+    assert(reshaped.get_element(3) == 4);
+
+    const int* shape = reshaped.get_shape();
+    assert(shape[0] == 4);
+    assert(shape[1] == 1);
+    std::cout << "Test reshape vector to vector passed." << std::endl;
 }
 
 void test_equality_operator() {
