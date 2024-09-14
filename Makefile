@@ -6,14 +6,16 @@
 #    By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 23:25:54 by plopez-b          #+#    #+#              #
-#    Updated: 2024/09/14 01:46:03 by plopez-b         ###   ########.fr        #
+#    Updated: 2024/09/14 03:14:36 by plopez-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS			=	-Wall -Werror -Wextra -std=c++98 -I./src
+FLAGS			=	-g -Wall -Werror -Wextra -I./src
 
 TESTS			=	src/tests/matrix.cpp \
-					src/tests/ex00.cpp
+					src/tests/ex00.cpp \
+					src/tests/ex01.cpp \
+					src/tests/ex02.cpp
 
 BINS			=	$(addprefix bin/, $(TESTS:.cpp=))
 
@@ -25,10 +27,10 @@ bin/%: %.cpp
 	@mkdir -p $(dir $@)
 	${COMPILER} ${FLAGS} $< -o $@
 
-test:			${BINS}
+test:			${BINS} ${TESTS}
 	$(foreach EXE, $(BINS), $(EXE);)
 
-valgrind:		${BINS}
+valgrind:		${BINS} ${TESTS}
 	$(foreach EXE, $(BINS), \
 		valgrind --leak-check=full --track-origins=yes \
 		--error-exitcode=1 $(EXE); \

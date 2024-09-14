@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:02:50 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 01:33:54 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 03:13:29 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 
 # include <iostream>
 # include <cstring>
+
+template <typename K>
+Matrix<K>::Matrix()
+{
+    shape[0] = 0;
+    shape[1] = 0;
+    this->elements = NULL;
+}
 
 template <typename K>
 Matrix<K>::Matrix(K *elements, int rows, int columns)
@@ -32,6 +40,18 @@ Matrix<K>::Matrix(const Matrix &o)
     shape[1] = o.shape[1];
     this->elements = new K[shape[0] * shape[1]];
     std::memcpy(this->elements, o.elements, shape[0] * shape[1] * sizeof(K));
+}
+
+template <typename K>
+Matrix<K> &Matrix<K>::operator=(const Matrix &o)
+{
+    shape[0] = o.shape[0];
+    shape[1] = o.shape[1];
+    if (this->elements)
+        delete[] this->elements;
+    this->elements = new K[shape[0] * shape[1]];
+    std::memcpy(this->elements, o.elements, shape[0] * shape[1] * sizeof(K));
+    return *this;
 }
 
 template <typename K>
