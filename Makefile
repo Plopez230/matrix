@@ -6,7 +6,7 @@
 #    By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 23:25:54 by plopez-b          #+#    #+#              #
-#    Updated: 2024/09/14 16:35:16 by plopez-b         ###   ########.fr        #
+#    Updated: 2024/09/14 17:52:52 by plopez-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ TESTS			=	src/tests/matrix.cpp \
 					src/tests/ex00.cpp \
 					src/tests/ex01.cpp \
 					src/tests/ex02.cpp \
-					src/tests/ex03.cpp
+					src/tests/ex03.cpp \
+					src/tests/ex04.cpp
 
 BINS			=	$(addprefix bin/, $(TESTS:.cpp=))
 

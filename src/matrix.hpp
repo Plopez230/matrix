@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 16:37:31 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 17:43:19 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,11 @@ public:
     void        add(const Matrix<K> &m);
     void        subtract(const Matrix<K> &m);
     void        scale(K scalar);
+
+    // ex04.tpp
+    K           norm_1();
+    K           norm();
+    K           norm_inf();
 };
 
 template <typename K>
@@ -83,5 +88,6 @@ Matrix<K> lerp(const Matrix<K> &u, const Matrix<K> &v, K t);
 # include "ex01.tpp"
 # include "ex02.tpp"
 # include "ex03.tpp"
+# include "ex04.tpp"
 
 #endif
