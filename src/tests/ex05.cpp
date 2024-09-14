@@ -6,12 +6,11 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:18:02 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 19:49:05 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:50:30 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "matrix.hpp"
-#include <sstream>
 #include <cassert>
 
 void test_angle_cos();
@@ -25,20 +24,6 @@ int main()
     test_angle_cos_0();
 
     return 0;
-}
-
-template <typename K>
-int compare(K a, K b)
-{
-    std::string buffer_a, buffer_b;
-    std::stringstream ss_a, ss_b;
-
-    ss_a << std::fixed << a;
-    ss_a >> buffer_a;
-    ss_b << std::fixed << b;
-    ss_b >> buffer_b;
-
-    return buffer_a == buffer_b;
 }
 
 void test_angle_cos()

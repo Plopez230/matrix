@@ -6,14 +6,12 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 17:24:57 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 18:44:31 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:50:21 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <cassert>
 #include "matrix.hpp"
-#include <cstdio>
-#include <sstream>
 
 void test_norm_1_vector();
 void test_norm_vector();
@@ -32,20 +30,6 @@ int main()
     test_norm_inf_matrix();
 
     return 0;
-}
-
-template <typename K>
-int compare(K a, K b)
-{
-    std::string buffer_a, buffer_b;
-    std::stringstream ss_a, ss_b;
-
-    ss_a << a;
-    ss_a >> buffer_a;
-    ss_b << b;
-    ss_b >> buffer_b;
-
-    return buffer_a == buffer_b;
 }
 
 void test_norm_1_vector()

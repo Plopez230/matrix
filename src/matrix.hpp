@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 19:32:55 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 20:51:20 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,10 @@ Matrix<K> lerp(const Matrix<K> &u, const Matrix<K> &v, K t);
 template <typename K>
 K angle_cos(const Vector<K> &u, const Vector<K> &v);
 
+// ex06.tpp
+template <typename K>
+Vector<K> cross_product(const Vector<K> &u, const Vector<K> &v);
+
 # include "matrix.tpp"
 # include "vector.tpp"
 # include "ex00.tpp"
@@ -94,5 +98,6 @@ K angle_cos(const Vector<K> &u, const Vector<K> &v);
 # include "ex03.tpp"
 # include "ex04.tpp"
 # include "ex05.tpp"
+# include "ex06.tpp"
 
 #endif
