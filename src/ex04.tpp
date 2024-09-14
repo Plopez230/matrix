@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 16:52:56 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 18:36:31 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 19:33:06 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 // https://bathmash.github.io/HELM/30_4_mtrx_norms-web/30_4_mtrx_norms-webse1.html
 
 template <typename K>
-K Matrix<K>::norm_1()
+K Matrix<K>::norm_1() const
 {
     K result = 0;
     K sum = 0;
@@ -39,7 +39,7 @@ K Matrix<K>::norm_1()
 }
 
 template <typename K>
-K Matrix<K>::norm()
+K Matrix<K>::norm() const
 {
     K result = 0;
 
@@ -55,7 +55,7 @@ K Matrix<K>::norm()
 }
 
 template <typename K>
-K Matrix<K>::norm_inf()
+K Matrix<K>::norm_inf() const
 {
     K result = 0;
     K sum = 0;

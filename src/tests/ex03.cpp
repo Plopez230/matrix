@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 02:57:34 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 16:44:10 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 19:45:00 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,7 @@ void test_dot_invalid_size() {
         std::cout <<
             "Test dot invalid size passed: "
             << e.what() << std::endl;
+        return;
     }
+    throw std::invalid_argument("No exception thrown.");
 }

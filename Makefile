@@ -6,7 +6,7 @@
 #    By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 23:25:54 by plopez-b          #+#    #+#              #
-#    Updated: 2024/09/14 17:52:52 by plopez-b         ###   ########.fr        #
+#    Updated: 2024/09/14 19:46:57 by plopez-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,18 @@ TESTS			=	src/tests/matrix.cpp \
 					src/tests/ex01.cpp \
 					src/tests/ex02.cpp \
 					src/tests/ex03.cpp \
-					src/tests/ex04.cpp
+					src/tests/ex04.cpp \
+					src/tests/ex05.cpp
+
+SRCS			=	src/matrix.hpp \
+					src/matrix.tpp \
+					src/vector.tpp \
+					src/ex00.tpp \
+					src/ex01.tpp \
+					src/ex02.tpp \
+					src/ex03.tpp \
+					src/ex04.tpp \
+					src/ex05.tpp
 
 BINS			=	$(addprefix bin/, $(TESTS:.cpp=))
 
@@ -25,7 +36,7 @@ COMPILER 		=	g++
 
 all:			${BINS}
 
-bin/%: %.cpp
+bin/%: %.cpp ${SRCS}
 	@mkdir -p $(dir $@)
 	${COMPILER} ${FLAGS} $< -o $@
 

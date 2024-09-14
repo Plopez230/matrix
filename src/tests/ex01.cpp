@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 02:04:40 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 02:59:35 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 19:44:48 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,7 +99,9 @@ void test_linear_combination_invalid_size() {
         std::cout <<
             "Test linear combination invalid size passed: "
             << e.what() << std::endl;
+        return;
     }
+    throw std::invalid_argument("No exception thrown.");
 }
 
 void test_linear_combination_invalid_dimensions() {
@@ -122,7 +124,9 @@ void test_linear_combination_invalid_dimensions() {
     } catch (const std::invalid_argument& e) {
         std::cout << "Test linear combination invalid dimensions passed: "
             << e.what() << std::endl;
+        return;
     }
+    throw std::invalid_argument("No exception thrown.");
 }
 
 void test_linear_combination_empty_matrices() {
@@ -136,5 +140,7 @@ void test_linear_combination_empty_matrices() {
     } catch (const std::invalid_argument& e) {
         std::cout << "Test linear combination empty matrices passed: "
             << e.what() << std::endl;
+        return;
     }
+    throw std::invalid_argument("No exception thrown.");
 }

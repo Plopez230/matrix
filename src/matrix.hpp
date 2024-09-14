@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 17:43:19 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 19:32:55 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ public:
     void        scale(K scalar);
 
     // ex04.tpp
-    K           norm_1();
-    K           norm();
-    K           norm_inf();
+    K           norm_1() const;
+    K           norm() const;
+    K           norm_inf() const;
 };
 
 template <typename K>
@@ -70,7 +70,7 @@ public:
     void        set_element(const K &element, int row);
 
     // ex03.tpp
-    K           dot(const Vector<K> &v);
+    K           dot(const Vector<K> &v) const;
 };
 
 // ex01.tpp
@@ -82,6 +82,10 @@ Matrix<K> linear_combination(const std::vector<Matrix<K> > &matrices,
 template<typename K>
 Matrix<K> lerp(const Matrix<K> &u, const Matrix<K> &v, K t);
 
+// ex05.tpp
+template <typename K>
+K angle_cos(const Vector<K> &u, const Vector<K> &v);
+
 # include "matrix.tpp"
 # include "vector.tpp"
 # include "ex00.tpp"
@@ -89,5 +93,6 @@ Matrix<K> lerp(const Matrix<K> &u, const Matrix<K> &v, K t);
 # include "ex02.tpp"
 # include "ex03.tpp"
 # include "ex04.tpp"
+# include "ex05.tpp"
 
 #endif

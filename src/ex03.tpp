@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 16:28:28 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 16:39:18 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 19:32:27 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "matrix.hpp"
 
 template <typename K>
-K Vector<K>::dot(const Vector<K> &v)
+K Vector<K>::dot(const Vector<K> &v) const
 {
     const int *this_shape = this->get_shape();
     const int *v_shape = v.get_shape();
