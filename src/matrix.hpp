@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 03:41:50 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 03:51:01 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,6 +42,9 @@ public:
     void        add(const Matrix<K> &m);
     void        subtract(const Matrix<K> &m);
     void        scale(K scalar);
+
+    // ex03.tpp
+    void        dot(const Matrix<K> &m);
 };
 
 // ex01.tpp
