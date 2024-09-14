@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 03:51:01 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 16:09:07 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,14 @@
 
 # include <vector>
 
+template<typename K>
+class Vector;
+
 template <typename K>
 class Matrix
 {
+protected:
+
     K   *elements;
     int shape[2];
 
@@ -35,13 +40,29 @@ public:
     int         is_square() const;
     int         is_vector() const;
     void        print() const;
-    void        reshape(int rows, int columns);
+    Matrix<K>   reshape(int rows, int columns);
+    Vector<K>   reshape(int rows);
     bool        operator==(const Matrix &m) const;
 
     // ex00.tpp
     void        add(const Matrix<K> &m);
     void        subtract(const Matrix<K> &m);
     void        scale(K scalar);
+};
+
+template <typename K>
+class Vector: public Matrix<K>
+{
+public:
+
+    // vector.tpp
+    Vector();
+    Vector(K *elements, int rows);
+    Vector(const Vector &o);
+    Vector &operator=(const Vector &o);
+    ~Vector();
+    K           get_element(int row) const;
+    void        set_element(const K &element, int row);
 
     // ex03.tpp
     void        dot(const Matrix<K> &m);
@@ -57,6 +78,7 @@ template<typename K>
 Matrix<K> lerp(const Matrix<K> &u, const Matrix<K> &v, K t);
 
 # include "matrix.tpp"
+# include "vector.tpp"
 # include "ex00.tpp"
 # include "ex01.tpp"
 # include "ex02.tpp"

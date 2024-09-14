@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:02:50 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 03:42:38 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/14 15:57:52 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,13 +110,25 @@ void Matrix<K>::print() const
 }
 
 template <typename K>
-void Matrix<K>::reshape(int rows, int columns)
+Matrix<K> Matrix<K>::reshape(int rows, int columns)
 {
     if (rows * columns != shape[0] * shape[1])
         throw std::invalid_argument(
             "The new shape does not have the same number of elements.");
-    shape[0] = rows;
-    shape[1] = columns;
+    Matrix<K> result(elements, rows, columns);
+    
+    return result;
+}
+
+template <typename K>
+Vector<K> Matrix<K>::reshape(int rows)
+{
+    if (rows != shape[0] * shape[1])
+        throw std::invalid_argument(
+            "The new shape does not have the same number of elements.");
+    Vector<K> result(elements, rows);
+    
+    return result;
 }
 
 template <typename K>
