@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 03:11:07 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 03:37:10 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,8 +40,8 @@ public:
     int         is_square() const;
     int         is_vector() const;
     void        print() const;
-    Matrix<K>   reshape(int rows, int columns);
-    Vector<K>   reshape(int rows);
+    Matrix<K>   reshape(int rows, int columns) const;
+    Vector<K>   reshape(int rows) const;
     bool        operator==(const Matrix &m) const;
 
     // ex00.tpp
@@ -60,6 +60,9 @@ public:
 
     // ex08.tpp
     K           trace() const;
+
+    // ex09.tpp
+    Matrix<K>   transpose() const;
 };
 
 template <typename K>
@@ -108,5 +111,6 @@ Vector<K> cross_product(const Vector<K> &u, const Vector<K> &v);
 # include "ex06.tpp"
 # include "ex07.tpp"
 # include "ex08.tpp"
+# include "ex09.tpp"
 
 #endif

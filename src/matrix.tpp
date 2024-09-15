@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:02:50 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 20:56:08 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 03:37:25 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ void Matrix<K>::print() const
 }
 
 template <typename K>
-Matrix<K> Matrix<K>::reshape(int rows, int columns)
+Matrix<K> Matrix<K>::reshape(int rows, int columns) const
 {
     if (rows * columns != shape[0] * shape[1])
         throw std::invalid_argument(
@@ -137,7 +137,7 @@ Matrix<K> Matrix<K>::reshape(int rows, int columns)
 }
 
 template <typename K>
-Vector<K> Matrix<K>::reshape(int rows)
+Vector<K> Matrix<K>::reshape(int rows) const
 {
     if (rows != shape[0] * shape[1])
         throw std::invalid_argument(
