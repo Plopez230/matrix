@@ -6,11 +6,11 @@
 #    By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 23:25:54 by plopez-b          #+#    #+#              #
-#    Updated: 2024/09/15 18:08:38 by plopez-b         ###   ########.fr        #
+#    Updated: 2024/09/15 19:00:03 by plopez-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-FLAGS			=	-g -Wall -Werror -Wextra -I./src
+FLAGS			=	-g -I./src #-Wall -Werror -Wextra
 
 TESTS			=	src/tests/matrix.cpp \
 					src/tests/ex00.cpp \
@@ -25,7 +25,8 @@ TESTS			=	src/tests/matrix.cpp \
 					src/tests/ex09.cpp \
 					src/tests/ex10.cpp \
 					src/tests/ex11.cpp \
-					src/tests/ex12.cpp
+					src/tests/ex12.cpp \
+					src/tests/ex13.cpp
 
 SRCS			=	src/matrix.hpp \
 					src/matrix.tpp \
@@ -42,7 +43,8 @@ SRCS			=	src/matrix.hpp \
 					src/ex09.tpp \
 					src/ex10.tpp \
 					src/ex11.tpp \
-					src/ex12.tpp
+					src/ex12.tpp \
+					src/ex13.tpp
 
 BINS			=	$(addprefix bin/, $(TESTS:.cpp=))
 
