@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:56:19 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 06:15:57 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 06:19:01 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,7 +122,6 @@ Matrix<K> Matrix<K>::row_echelon() const
             K top_entry = result.get_element(row, col);
             if (row != top_row)
             {
-                //std::cout << "Swapping rows " << top_row << " and " << row << std::endl;
                 swap_rows(result, top_row, row);
             }
 
@@ -151,7 +150,7 @@ Matrix<K> Matrix<K>::row_echelon() const
 
             // Now consider the part of the matrix below the top row and to the
             // right of the column under consideration: if there are no such
-            // rows or columns, stop since the procedure is finished.Otherwise,
+            // rows or columns, stop since the procedure is finished. Otherwise,
             // carry out the same procedure on the new matrix.
             top_row ++;
         }

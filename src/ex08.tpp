@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:10:34 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 03:16:45 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 06:34:01 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define EX08_TPP
 
 # include "matrix.hpp"
+
+// https://es.wikipedia.org/wiki/Traza_(%C3%A1lgebra_lineal)
 
 template <typename K>
 K Matrix<K>::trace() const
