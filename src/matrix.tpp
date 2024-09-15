@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 23:02:50 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 03:37:25 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 06:16:48 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,13 @@
 template <typename K>
 int compare(K a, K b)
 {
-    std::string buffer_a, buffer_b;
-    std::stringstream ss_a, ss_b;
+    K precision = (K) 0.00001;
+    K zero = (K) 0.0;
+    K dif = a - b;
+    dif = dif >= zero ? dif : - dif;
+    int result = dif <= precision;
 
-    ss_a << std::fixed << a;
-    ss_a >> buffer_a;
-    ss_b << std::fixed << b;
-    ss_b >> buffer_b;
-
-    return buffer_a == buffer_b;
+    return result;
 }
 
 template <typename K>
@@ -162,7 +160,9 @@ bool Matrix<K>::operator==(const Matrix<K>& m) const
     {
         for (int j = 0; j < m_shape[1]; ++j)
         {
-            if (!compare(m.get_element(i, j), this->get_element(i, j)))
+            K this_element = this->get_element(i, j);
+            K m_element = m.get_element(i, j);
+            if (!compare(m_element, this_element))
             {
                 return false;
             }

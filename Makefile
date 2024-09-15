@@ -6,7 +6,7 @@
 #    By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/09/13 23:25:54 by plopez-b          #+#    #+#              #
-#    Updated: 2024/09/15 03:29:01 by plopez-b         ###   ########.fr        #
+#    Updated: 2024/09/15 03:59:13 by plopez-b         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,8 @@ TESTS			=	src/tests/matrix.cpp \
 					src/tests/ex06.cpp \
 					src/tests/ex07.cpp \
 					src/tests/ex08.cpp \
-					src/tests/ex09.cpp
+					src/tests/ex09.cpp \
+					src/tests/ex10.cpp
 
 SRCS			=	src/matrix.hpp \
 					src/matrix.tpp \
@@ -36,7 +37,8 @@ SRCS			=	src/matrix.hpp \
 					src/ex06.tpp \
 					src/ex07.tpp \
 					src/ex08.tpp \
-					src/ex09.tpp
+					src/ex09.tpp \
+					src/ex10.tpp
 
 BINS			=	$(addprefix bin/, $(TESTS:.cpp=))
 

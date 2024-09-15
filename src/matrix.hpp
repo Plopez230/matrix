@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 03:37:10 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 05:04:20 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,9 @@ public:
 
     // ex09.tpp
     Matrix<K>   transpose() const;
+
+    // ex10.tpp
+    Matrix<K>   row_echelon() const;
 };
 
 template <typename K>
@@ -112,5 +115,6 @@ Vector<K> cross_product(const Vector<K> &u, const Vector<K> &v);
 # include "ex07.tpp"
 # include "ex08.tpp"
 # include "ex09.tpp"
+# include "ex10.tpp"
 
 #endif
