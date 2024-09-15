@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:18:02 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 20:50:30 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 08:06:33 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ void test_angle_cos()
 
 void test_angle_invalid_shape()
 {
-    double elements_1[] = {0.0, 0.0};
+    double elements_1[] = {0.0, 1.0};
     double elements_2[] = {0.0, 1.0, 2.0};
 
     Vector<double> vec1(elements_1, 2);
