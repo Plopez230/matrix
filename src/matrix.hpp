@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 07:00:51 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 18:10:00 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,9 @@ public:
 
     // ex11.tpp
     K           determinant() const;
+
+    // ex12.tpp
+    Matrix<K>   inverse() const;
 };
 
 template <typename K>
@@ -120,5 +123,6 @@ Vector<K> cross_product(const Vector<K> &u, const Vector<K> &v);
 # include "ex09.tpp"
 # include "ex10.tpp"
 # include "ex11.tpp"
+# include "ex12.tpp"
 
 #endif

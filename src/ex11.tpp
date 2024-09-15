@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 06:58:50 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 08:04:58 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 17:55:16 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ K Matrix<K>::determinant() const
     }
     
     throw std::invalid_argument(
-        "Not implemented");
+        "Determinant not implemented for matrices larger than 4x4.");
 }
 
 #endif
