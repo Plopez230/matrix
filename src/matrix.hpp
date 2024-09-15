@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/13 22:51:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 20:51:20 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/15 01:54:51 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ public:
     K           norm_1() const;
     K           norm() const;
     K           norm_inf() const;
+
+    // ex07.tpp
+    Vector<K>   mul_vec(const Vector<K> &v);
+    Matrix<K>   mul_mat(const Matrix<K> &m);
 };
 
 template <typename K>
@@ -99,5 +103,6 @@ Vector<K> cross_product(const Vector<K> &u, const Vector<K> &v);
 # include "ex04.tpp"
 # include "ex05.tpp"
 # include "ex06.tpp"
+# include "ex07.tpp"
 
 #endif
