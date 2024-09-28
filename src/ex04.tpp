@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 16:52:56 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 19:33:06 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 01:04:31 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,17 @@
 
 // https://bathmash.github.io/HELM/30_4_mtrx_norms-web/30_4_mtrx_norms-webse1.html
 
+/**
+ * In the case of vectors:
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * 
+ * In the case of matrices:
+ * Time complexity: O(n * m)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 K Matrix<K>::norm_1() const
 {
@@ -38,6 +49,17 @@ K Matrix<K>::norm_1() const
     return result;
 }
 
+/**
+ * In the case of vectors:
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * 
+ * In the case of matrices:
+ * Time complexity: O(n * m)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 K Matrix<K>::norm() const
 {
@@ -54,6 +76,17 @@ K Matrix<K>::norm() const
     return std::pow(result, 1.0 / 2.0);
 }
 
+/**
+ * In the case of vectors:
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * 
+ * In the case of matrices:
+ * Time complexity: O(n * m)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 K Matrix<K>::norm_inf() const
 {

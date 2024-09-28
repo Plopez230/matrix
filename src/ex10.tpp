@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:56:19 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 06:19:01 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 01:10:02 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,10 @@
 // https://linearalgebra.math.umanitoba.ca/math1220/section-12.html
 
 /**
- * O(n)
+ * Time complexity: O(m)
+ * Space complexity: O(1)
+ * 
+ * where m is the number of columns in the matrix
  */
 template <typename K>
 static int pivot(Matrix<K> &m, int row)
@@ -39,7 +42,10 @@ static int pivot(Matrix<K> &m, int row)
 }
 
 /**
- * O(n)
+ * Time complexity: O(m)
+ * Space complexity: O(1)
+ * 
+ * where m is the number of columns in the matrix
  */
 template <typename K>
 static void swap_rows(Matrix<K> &m, int a, int b)
@@ -53,7 +59,10 @@ static void swap_rows(Matrix<K> &m, int a, int b)
 }
 
 /**
- * O(n)
+ * Time complexity: O(m)
+ * Space complexity: O(1)
+ * 
+ * where m is the number of columns in the matrix
  */
 template <typename K>
 static void multiply_row(Matrix<K> &m, int row, K n)
@@ -65,7 +74,10 @@ static void multiply_row(Matrix<K> &m, int row, K n)
 }
 
 /**
- * O(n)
+ * Time complexity: O(m)
+ * Space complexity: O(1)
+ * 
+ * where m is the number of columns in the matrix
  */
 template <typename K>
 static void add_multiple_of_row(Matrix<K> &m, int a, int b, K n)
@@ -78,7 +90,10 @@ static void add_multiple_of_row(Matrix<K> &m, int a, int b, K n)
 }
 
 /**
- * O(n²)
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix
  */
 template <typename K>
 static int first_nonzero_entry(Matrix<K> &m, int col, int top_row)
@@ -94,7 +109,10 @@ static int first_nonzero_entry(Matrix<K> &m, int col, int top_row)
 }
 
 /**
- * O(n³)
+ * Time complexity: O(m² * n)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
  */
 template <typename K>
 Matrix<K> Matrix<K>::row_echelon() const

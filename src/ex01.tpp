@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 01:53:19 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 02:56:50 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:45:00 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,15 @@
 # include "matrix.hpp"
 # include <vector>
 
+/**
+ * Time complexity: O(N * n * m)
+ * Space complexity: O(N * n * m)
+ * 
+ * where N is the number of matrices, n is the number of rows in the matrix
+ * and m is the number of columns
+ * 
+ * Is N * n * m the total number of coordinates?
+ */
 template<typename K>
 Matrix<K> linear_combination(const std::vector<Matrix<K> > &matrices,
     const std::vector<K> &scalars)

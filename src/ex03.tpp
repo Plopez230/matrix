@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 16:28:28 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 19:32:27 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:47:39 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include "matrix.hpp"
 
+/**
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * 
+ * where n is the length of the vector
+ */
 template <typename K>
 K Vector<K>::dot(const Vector<K> &v) const
 {

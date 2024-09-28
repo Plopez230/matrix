@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 01:06:29 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 03:03:34 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:57:48 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 # include "matrix.hpp"
 
+/**
+ * Time complexity: O(n * m)
+ * Space complexity: O(m)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns,
+ * m is also the length of the vector
+ */
 template <typename K>
 Vector<K> Matrix<K>::mul_vec(const Vector<K> &v)
 {
@@ -43,6 +50,14 @@ Vector<K> Matrix<K>::mul_vec(const Vector<K> &v)
     return result;
 }
 
+/**
+ * Time complexity: O(n * m * p)
+ * Space complexity: O(n * p)
+ * 
+ * where n is the number of rows in the first matrix
+ * m is the number of columns in the first matrix and rows in the second one,
+ * p is the number of columns in the second matrix
+ */
 template <typename K>
 Matrix<K> Matrix<K>::mul_mat(const Matrix<K> &mat)
 {

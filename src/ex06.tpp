@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 20:22:18 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 20:55:33 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:51:42 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 
 // https://en.wikipedia.org/wiki/Dot_product
 
+/**
+ * Time complexity: O(1)
+ * Space complexity: O(1)
+ */
 template <typename K>
 Vector<K> cross_product(const Vector<K> &u, const Vector<K> &v)
 {

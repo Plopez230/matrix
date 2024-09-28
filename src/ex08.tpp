@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:10:34 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 06:34:01 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:58:47 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 
 // https://es.wikipedia.org/wiki/Traza_(%C3%A1lgebra_lineal)
 
+/**
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the square matrix.
+ */
 template <typename K>
 K Matrix<K>::trace() const
 {

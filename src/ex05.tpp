@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/14 19:02:50 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/14 19:47:29 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:50:08 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,12 @@
 // cos(theta) = a.dot(b) / (a.norm() * b.norm())
 // https://en.wikipedia.org/wiki/Dot_product
 
+/**
+ * Time complexity: O(n)
+ * Space complexity: O(1)
+ * 
+ * where n is the length of the vectors
+ */
 template <typename K>
 K angle_cos(const Vector<K> &u, const Vector<K> &v)
 {

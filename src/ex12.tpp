@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 18:10:13 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 17:46:03 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 01:17:54 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include "matrix.hpp"
 
+/**
+ * Time complexity: O(n * m)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 Matrix<K> augmented_matrix(const Matrix<K> &m)
 {
@@ -39,6 +45,12 @@ Matrix<K> augmented_matrix(const Matrix<K> &m)
     return augmented;
 }
 
+/**
+ * Time complexity: O(n * m)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 Matrix<K> right_matrix(const Matrix<K> &m)
 {
@@ -59,6 +71,12 @@ Matrix<K> right_matrix(const Matrix<K> &m)
     return n;
 }
 
+/**
+ * Time complexity: O(m² * n)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 Matrix<K> Matrix<K>::inverse() const
 {

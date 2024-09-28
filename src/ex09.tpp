@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 03:27:34 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 03:34:20 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 00:59:24 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include "matrix.hpp"
 
+/**
+ * Time complexity: O(n * m)
+ * Space complexity: O(n * m)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 Matrix<K> Matrix<K>::transpose() const
 {

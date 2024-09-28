@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 06:58:50 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 17:55:16 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 01:14:53 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,14 @@
 // https://www.matesfacil.com/calculadoras/matrices/calculadora-online-determinantes-matrices-2x2-3x3-4x4-matriz.html
 // https://www.youtube.com/watch?v=Ip3X9LOh2dk
 
+/**
+ * Generate 3x3 submatrices for applying Laplace expansion 
+ * 
+ * Time complexity: O(n * m)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 Matrix<K> submatrix(const Matrix<K> &m, int n)
 {
@@ -57,6 +65,13 @@ K rule_of_sarrus(const Matrix<K> &m)
         - m.get_element(2, 2) * m.get_element(0, 1) * m.get_element(1, 0);
 }
 
+/**
+ * Worst case for 4x4 matrices
+ * Time complexity: O(n * m²)
+ * Space complexity: O(1)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 K Matrix<K>::determinant() const
 {

@@ -6,7 +6,7 @@
 /*   By: plopez-b <plopez-b@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/15 18:07:21 by plopez-b          #+#    #+#             */
-/*   Updated: 2024/09/15 19:01:59 by plopez-b         ###   ########.fr       */
+/*   Updated: 2024/09/29 01:23:36 by plopez-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,12 @@
 
 # include "matrix.hpp"
 
+/**
+ * Time complexity: O(m)
+ * Space complexity: O(1)
+ * 
+ * where m is the number of columns
+ */
 template <typename K>
 int is_linearly_independent(const Matrix<K> &m, int row)
 {
@@ -30,6 +36,12 @@ int is_linearly_independent(const Matrix<K> &m, int row)
     return 0;
 }
 
+/**
+ * Time complexity: O(m² * n)
+ * Space complexity: O(n * m)
+ * 
+ * where n is the number of rows in the matrix and m is the number of columns
+ */
 template <typename K>
 unsigned int Matrix<K>::rank() const
 {
